@@ -5,6 +5,9 @@ Project: Find the Shortest Route using the A* Algorithm on a Real-World Map
 
 Project tìm đường ngắn nhất trên bản đồ OpenStreetMap sử dụng thuật toán A* (hoặc Dijkstra...).
 
+## Deploy demo online Netlify
+Netlify: https://group1astrar.netlify.app/
+
 ## Công nghệ
 - JavaScript
 - OpenStreetMap data
@@ -17,5 +20,4 @@ cd osm-pathfinding
 npm install
 npm start   # hoặc cách chạy project của bạn
 
-## Deploy demo online Netlify
-Netlify: https://group1astrar.netlify.app/
+
