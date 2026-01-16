@@ -23,6 +23,29 @@ const frontierLayer = L.layerGroup().addTo(map);
 const pathLayer = L.layerGroup().addTo(map);
 const markerLayer = L.layerGroup().addTo(map);
 
+// Thêm control search vào góc bản đồ
+L.Control.geocoder({
+    defaultMarkGeocode: true,
+    placeholder: "Tìm địa chỉ, đường, thành phố...", 
+    errorMessage: "Không tìm thấy địa điểm",
+    geocoder: L.Control.Geocoder.nominatim()  // dùng Nominatim miễn phí
+})
+.addTo(map);
+
+// (Tùy chọn) Khi người dùng search xong thì zoom + đặt marker
+.on('markgeocode', function(e) {
+    var latlng = e.geocode.center;
+    map.setView(latlng, 16);  // zoom mức 16
+
+    // Nếu bạn đã có marker cũ thì xóa trước
+    if (window.searchMarker) map.removeLayer(window.searchMarker);
+
+    window.searchMarker = L.marker(latlng)
+        .addTo(map)
+        .bindPopup(e.geocode.name)
+        .openPopup();
+});
+
 // ==========================
 // 2️⃣ HELPERS
 // ==========================
