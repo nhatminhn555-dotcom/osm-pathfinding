@@ -1,5 +1,5 @@
 # Artificial Intelligence Project
-## Project: Find the Shortest Route using the A* Algorithm on a Real-World Map
+Project: Find the Shortest Route using the A* Algorithm on a Real-World Map
 
 ## OSM Pathfinding
 
